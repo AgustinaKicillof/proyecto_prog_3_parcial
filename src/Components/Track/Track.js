@@ -1,10 +1,28 @@
 import React, { Component } from "react";
+import "./track.css"
 
 class Track extends Component {
     constructor(props) {
         super(props);
         this.state = {
+          verMas: "aditional-info", //como se muestra original
+          button: "ver mas",
         };
+        
+      }
+      
+      mostrar(){
+        if (this.state.verMas == "aditional-info") {
+          this.setState({
+            verMas: "mostrar",
+            button: "ver menos"
+          })
+        } else {
+          this.setState({
+            verMas: "aditional-info",
+            button: "ver mas"
+          })
+        }
       }
   render() {
     return (
@@ -25,7 +43,7 @@ class Track extends Component {
             optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis!
             Sint, laboriosam cum.
           </p>
-          <section className="aditional-info">
+          <section className={`${this.state.verMas}`}>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
               atque.
@@ -39,7 +57,7 @@ class Track extends Component {
               atque.
             </p>
           </section>
-          <a href="">Ver más</a>
+          <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>
         </main>
       </article>
     );

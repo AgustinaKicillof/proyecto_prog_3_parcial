@@ -1,0 +1,13 @@
+.vermas{
+    text-decoration: underline;
+    color: blue;
+}
+.vermas:hover{
+    cursor: pointer;
+}
+.mostrar{
+    display: block;
+}
+.aditional-info{
+    display: none;
+}

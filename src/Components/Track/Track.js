@@ -6,7 +6,7 @@ class Track extends Component {
         super(props);
         this.state = {
           verMas: "aditional-info", //como se muestra original
-          button: "ver mas",
+          button: "Ver más",
         };
         
       }
@@ -15,12 +15,12 @@ class Track extends Component {
         if (this.state.verMas == "aditional-info") {
           this.setState({
             verMas: "mostrar",
-            button: "ver menos"
+            button: "Ver menos"
           })
         } else {
           this.setState({
             verMas: "aditional-info",
-            button: "ver mas"
+            button: "Ver más"
           })
         }
       }
@@ -43,19 +43,17 @@ class Track extends Component {
             optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis!
             Sint, laboriosam cum.
           </p>
+          <button>Eliminar canción</button>
           <section className={`${this.state.verMas}`}>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
+            Ranking: {this.props.dataTrack.position}
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
+            Artista: {this.props.dataTrack.artist.name} <img src= {this.props.dataTrack.artist.picture_small} alt='artist-pic'></img>
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
-            </p>
+            <a href={this.props.dataTrack.album.link}>
+            Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_small} alt='album-pic'></img>
+            </a>
           </section>
           <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>
         </main>

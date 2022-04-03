@@ -1,0 +1,15 @@
+header{
+    background-image: linear-gradient(to top right, lightgray, blue);
+    background-size: cover;
+}
+.header-top{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    gap: 20px;
+}
+.header-logo{
+    height: 80px;
+    width: 80px;
+}

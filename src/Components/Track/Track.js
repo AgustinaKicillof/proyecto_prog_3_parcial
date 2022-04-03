@@ -12,7 +12,7 @@ class Track extends Component {
       }
       
       mostrar(){
-        if (this.state.verMas == "aditional-info") {
+        if (this.state.verMas === "aditional-info") {
           this.setState({
             verMas: "mostrar",
             button: "Ver menos"
@@ -49,10 +49,10 @@ class Track extends Component {
             Ranking: {this.props.dataTrack.position}
             </p>
             <p>
-            Artista: {this.props.dataTrack.artist.name} <img src= {this.props.dataTrack.artist.picture_small} alt='artist-pic'></img>
+            Artista: {this.props.dataTrack.artist.name} 
             </p>
             <a href={this.props.dataTrack.album.link}>
-            Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_small} alt='album-pic'></img>
+            Album: {this.props.dataTrack.album.title} 
             </a>
           </section>
           <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>
@@ -63,3 +63,19 @@ class Track extends Component {
 }
 
 export default Track;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//<img src= {this.props.dataTrack.artist.picture_small} alt='artist-pic'></img>

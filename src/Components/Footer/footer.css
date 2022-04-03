@@ -1,8 +1,25 @@
 footer{
-    
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, lightgray, blue);
+    background-size: cover;
+}
+.footer-title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.footer-logo{
+    height: 100px;
+    width: 100px;
+}
+.footer-develop{
+    align-items: center;
 }
 .team{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 10px;
 }

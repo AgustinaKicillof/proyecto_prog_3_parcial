@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './header.css'
 
 class Header extends Component {
     constructor(){
@@ -8,7 +9,9 @@ class Header extends Component {
     render() {
         return (
             <header>
-            <h1>KBL Music</h1>
+            <div className='header-top'>
+            <h1>KBL Music</h1> <img className='header-logo' src='/LogoKBL.png' alt='Lpogo'></img>
+            </div>
             <section>
               <p>Ordenar ASC/ DESC</p>
               <i className="fas fa-th"></i>

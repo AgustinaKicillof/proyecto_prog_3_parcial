@@ -38,10 +38,7 @@ class Track extends Component {
           <img src="./img/image-default.png" alt="" />
           <h3>{this.props.dataTrack.title}</h3>
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque
-            velit minus facere laboriosam voluptatem impedit ea unde labore
-            optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis!
-            Sint, laboriosam cum.
+          Artista: {this.props.dataTrack.artist.name} <img src= {this.props.dataTrack.artist.picture_small} alt='artist-pic'></img>
           </p>
           <button>Eliminar canción</button>
           <section className={`${this.state.verMas}`}>
@@ -49,10 +46,10 @@ class Track extends Component {
             Ranking: {this.props.dataTrack.position}
             </p>
             <p>
-            Artista: {this.props.dataTrack.artist.name} 
+            
             </p>
             <a href={this.props.dataTrack.album.link}>
-            Album: {this.props.dataTrack.album.title} 
+            Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_small} alt='artist-pic'></img>
             </a>
           </section>
           <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>

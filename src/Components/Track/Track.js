@@ -54,6 +54,9 @@ class Track extends Component {
             <a href={this.props.dataTrack.album.link}>
             Album: {this.props.dataTrack.album.title} 
             </a>
+            <p>
+            Duration: {this.props.dataTrack.duration}
+            </p>
           </section>
           <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>
         </main>

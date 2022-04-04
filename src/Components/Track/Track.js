@@ -52,7 +52,7 @@ class Track extends Component {
             Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_small} alt='artist-pic'></img>
             </a>
             <p>
-            Duration: {this.props.dataTrack.duration}
+            Duration: {this.props.dataTrack.duration} segundos
             </p>
           </section>
           <p className="vermas" onClick={()=>this.mostrar()}>{this.state.button}</p>

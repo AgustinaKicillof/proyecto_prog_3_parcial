@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "../Header/Header"
 import Track from "../Track/Track"
 
 class Main extends Component {
@@ -6,7 +7,8 @@ class Main extends Component {
     super();
     this.state = {
       listaTracks: [],
-      loadTracks: false
+      loadTracks: false,
+      cantidadTarjetas: 20
     };
   }
   componentDidMount(){
@@ -20,8 +22,22 @@ class Main extends Component {
       })
     })
   }
+  agregarMas(){
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit="+ this.state.cantidadTarjetas)
+    .then((response)=>response.json())
+    .then((infoMusica)=>{
+      console.log(infoMusica.data)
+      this.setState({
+        listaTracks: infoMusica.data,
+        loadTracks: true, 
+        cantidadTarjetas: this.state.cantidadTarjetas+10
+      })
+    })
+  }
   render() {
     return (
+      <React.Fragment>
+      <Header agregarMas={()=>this.agregarMas()}/>
       <section className="card-container">
         {this.state.loadTracks?(
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
@@ -31,6 +47,7 @@ class Main extends Component {
       } 
         
       </section>
+      </React.Fragment>
     );
   }
 }

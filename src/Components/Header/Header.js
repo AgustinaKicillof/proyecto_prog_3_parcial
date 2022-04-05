@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './header.css'
 
 class Header extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={}
     }
     render() {
@@ -19,7 +19,7 @@ class Header extends Component {
               <form action="">
                 <h1>KBL Music</h1>
               </form>
-              <button type="button">Cargar más tarjetas</button>
+              <button type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
             </section>
           </header>
         );

@@ -34,6 +34,13 @@ class Main extends Component {
       })
     })
   }
+  eliminarTrack(idBorrado){
+    let listaFiltrada = this.state.listaTracks.filter(cancion=>cancion.id !== idBorrado) 
+    this.setState({
+      listaTracks: listaFiltrada
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -41,7 +48,7 @@ class Main extends Component {
       <section className="card-container">
         {this.state.loadTracks?(
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
-          <Track key={cancion.title + idx} dataTrack={cancion}/>
+          <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion}/>
         ))
         ): <h2>Cargando...</h2>// los : =else
       } 

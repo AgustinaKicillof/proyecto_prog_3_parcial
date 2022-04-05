@@ -38,9 +38,9 @@ class Track extends Component {
           <img src="./img/image-default.png" alt="" />
           <h3>{this.props.dataTrack.title}</h3>
           <p className="description">
-          Artista: {this.props.dataTrack.artist.name} <img src= {this.props.dataTrack.artist.picture_small} alt='artist-pic'></img>
+          Artista: {this.props.dataTrack.artist.name} <img src= {this.props.dataTrack.artist.picture_big} alt='artist-pic'></img>
           </p>
-          <button>Eliminar canción</button>
+          <button onClick={()=>this.props.eliminarTrack(this.props.dataTrack.id)}>Eliminar canción</button>
           <section className={`${this.state.verMas}`}>
             <p>
             Ranking: {this.props.dataTrack.position}
@@ -49,7 +49,7 @@ class Track extends Component {
             
             </p>
             <a href={this.props.dataTrack.album.link}>
-            Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_small} alt='artist-pic'></img>
+            Album: {this.props.dataTrack.album.title} <img src= {this.props.dataTrack.album.cover_big} alt='artist-pic'></img>
             </a>
             <p>
             Duration: {this.props.dataTrack.duration} segundos

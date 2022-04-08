@@ -4,7 +4,19 @@ import './header.css'
 class Header extends Component {
     constructor(props){
         super(props)
-        this.state={}
+        this.state={
+          value: "",
+        }
+    }
+    guardarCambios(datos){
+      let value = 'hola'
+      this.setState({
+        value: datos.target.value
+      },() => this.props.buscarTarjetas(this.state.value))
+     
+    }
+    evitarSubmit(event){
+      event.preventDefault()
     }
     render() {
         return (
@@ -16,13 +28,22 @@ class Header extends Component {
               <p>Ordenar ASC/ DESC</p>
               <i className="fas fa-th"></i>
               <i className="fas fa-align-justify"></i>
-              <form action="">
-                <h1>KBL Music</h1>
+              <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+              <input type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='ingrese usuario' value={this.state.value}/>
+                <button type="submit"> Enviar</button>
               </form>
               <button type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
             </section>
           </header>
         );
+    }
+
+    sumar(a,b){
+      return a + b
+    }
+
+    restar(a,b){
+      this.sumar(1,2)
     }
 }
 

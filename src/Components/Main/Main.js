@@ -7,6 +7,7 @@ class Main extends Component {
     super();
     this.state = {
       listaTracks: [],
+      listaBuscar: [],
       loadTracks: false,
       cantidadTarjetas: 20
     };
@@ -18,7 +19,8 @@ class Main extends Component {
       console.log(infoMusica.data)
       this.setState({
         listaTracks: infoMusica.data,
-        loadTracks: true 
+        loadTracks: true,
+        listaBuscar: infoMusica.data,
       })
     })
   }
@@ -29,6 +31,7 @@ class Main extends Component {
       console.log(infoMusica.data)
       this.setState({
         listaTracks: infoMusica.data,
+        listaBuscar: infoMusica.data,
         loadTracks: true, 
         cantidadTarjetas: this.state.cantidadTarjetas+10
       })
@@ -37,6 +40,13 @@ class Main extends Component {
   eliminarTrack(idBorrado){
     let listaFiltrada = this.state.listaTracks.filter(cancion=>cancion.id !== idBorrado) 
     this.setState({
+      listaTracks: listaFiltrada,
+      listaBuscar: listaFiltrada
+    })
+  }
+  buscarTarjetas(dato){ //dato es lo que pongo en el buscador
+    let listaFiltrada = this.state.listaBuscar.filter(cancion=>cancion.title.toLowerCase().includes(dato.toLowerCase())) 
+    this.setState({
       listaTracks: listaFiltrada
     })
   }
@@ -44,7 +54,7 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-      <Header agregarMas={()=>this.agregarMas()}/>
+      <Header agregarMas={()=>this.agregarMas()} buscarTarjetas={(dato)=>this.buscarTarjetas(dato)}/>
       <section className="card-container">
         {this.state.loadTracks?(
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//

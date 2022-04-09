@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Header from "../Header/Header"
-import Track from "../Track/Track"
+import Header from "../Header/Header";
+import Track from "../Track/Track";
+import './main.css'
 
 class Main extends Component {
   constructor() {

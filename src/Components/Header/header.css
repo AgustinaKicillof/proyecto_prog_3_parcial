@@ -1,7 +1,15 @@
 header{
-    background-image: linear-gradient(to top right, lightgray, blue);
+    background-image: linear-gradient(to top right, grey, black);
+    background-image: linear-gradient(to top, #2b2929 0%, #0a0411 100%);
     background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
+
 .header-top{
     display: flex;
     flex-direction: row;
@@ -10,6 +18,31 @@ header{
     gap: 20px;
 }
 .header-logo{
+    margin-top: 10px;
     height: 80px;
     width: 80px;
+}
+.header-title{
+    margin-top: 30px;
+}
+section{
+    
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+.buscador{
+    margin: 10px;
+    width: fit-content;
+    width: 80%;
+    
+    height: 20px;
+}
+.agrega-tarjetas{
+    width: 30%;
+    height: 60px;
+    font-size: large;
+    font-family: 'Nunito', sans-serif;
+    min-width: fit-content;
+    
 }

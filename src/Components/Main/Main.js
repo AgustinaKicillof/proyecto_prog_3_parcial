@@ -61,7 +61,7 @@ class Main extends Component {
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
           <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion}/>
         ))
-        ): <h2>Cargando...</h2>// los : =else
+        ): <h2 className="loader-text">Cargando...</h2>// los : =else
       } 
         
       </section>

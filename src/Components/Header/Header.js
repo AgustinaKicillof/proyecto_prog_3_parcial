@@ -28,11 +28,11 @@ class Header extends Component {
               <p>Ordenar ASC/ DESC</p>
               <i className="fas fa-th"></i>
               <i className="fas fa-align-justify"></i>
-              <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
-              <input type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='ingrese usuario' value={this.state.value}/>
-                <button type="submit"> Enviar</button>
+              <form  action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+              <input className='buscador' type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='Buscar Cancion' value={this.state.value}/>
+                
               </form>
-              <button type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
+              <button className='agrega-tarjetas' type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
             </section>
           </header>
         );
@@ -48,3 +48,18 @@ class Header extends Component {
 }
 
 export default Header;
+
+
+/*<div className='header-top'>
+            <h1>KBL Music</h1> <img className='header-logo' src='/LogoKBL.png' alt='Lpogo'></img>
+            </div>
+            <section>
+              <p>Ordenar ASC/ DESC</p>
+              <i className="fas fa-th"></i>
+              <i className="fas fa-align-justify"></i>
+              <form action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+              <input type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='ingrese usuario' value={this.state.value}/>
+                <button type="submit"> Enviar</button>
+              </form>
+              <button type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
+            </section>*/ 

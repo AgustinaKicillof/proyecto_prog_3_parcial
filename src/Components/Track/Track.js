@@ -36,12 +36,12 @@ class Track extends Component {
         </section>
         <main>
           <img src="./img/image-default.png" alt="" />
-          <h3>{this.props.dataTrack.title}</h3>
-          <img src= {this.props.dataTrack.album.cover_big}alt='artist-pic'/>
-          <p className="description">
+          <h3 className="title-song">{this.props.dataTrack.title}</h3>
+          <img src= {this.props.dataTrack.album.cover_medium}alt='artist-pic'/>
+          <h4 className="description">
           Artista: {this.props.dataTrack.artist.name} 
-          </p>
-          <button onClick={()=>this.props.eliminarTrack(this.props.dataTrack.id)}>Eliminar canción</button>
+          </h4>
+          <button className="boton-eliminar" onClick={()=>this.props.eliminarTrack(this.props.dataTrack.id)}>Eliminar canción</button>
           <section className={`${this.state.verMas}`}>
             <p>
             Ranking: {this.props.dataTrack.position}

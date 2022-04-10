@@ -35,7 +35,7 @@ class Track extends Component {
           <i className="far fa-window-close"></i>
         </section>
         <main>
-          <img src="./img/image-default.png" alt="" />
+          
           <h3 className="title-song">{this.props.dataTrack.title}</h3>
           <img src= {this.props.dataTrack.album.cover_medium}alt='artist-pic'/>
           <h4 className="description">

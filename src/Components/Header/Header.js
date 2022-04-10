@@ -22,15 +22,14 @@ class Header extends Component {
         return (
             <header>
             <div className='header-top'>
-            <h1>KBL Music</h1> <img className='header-logo' src='/LogoKBL.png' alt='Lpogo'></img>
+            <h1 className='header-title'>KBL Music</h1> <img className='header-logo' src='/LogoKBL.png' alt='Lpogo'></img>
             </div>
             <section>
-              <p>Ordenar ASC/ DESC</p>
+              <p>Ordenar por filas o columna</p>
               <i className="fas fa-th"></i>
               <i className="fas fa-align-justify"></i>
               <form  action="" onSubmit={(event)=> this.evitarSubmit(event)}>
               <input className='buscador' type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='Buscar Cancion' value={this.state.value}/>
-                
               </form>
               <button className='agrega-tarjetas' type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
             </section>

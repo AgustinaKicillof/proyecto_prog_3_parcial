@@ -28,3 +28,8 @@ main{
 .aditional-info{
     display: none;
 }
+
+.title-song{
+    overflow: hidden;
+    max-height: 25px;
+}

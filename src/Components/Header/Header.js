@@ -23,7 +23,7 @@ class Header extends Component {
             <header>
             
             <div className='header-top'>
-            <h1 className='header-title'>KBL Music</h1> <img className='header-logo' src='/LogoKBL.png' alt='Lpogo'></img>
+            <a className='refresher' href='local'><h1 className='header-title'>KBL Music</h1><img className='header-logo' src='/LogoKBL.png' alt='Logo'></img> </a>
             </div>
             
             <section>

@@ -1,4 +1,18 @@
-.card-container{
+.card-container-column{
+    background-image: url(background-pic.png);
+    
+    
+    padding: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+
+}
+.card-container-row{
     background-image: url(background-pic.png);
     
     
@@ -9,7 +23,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
-
 }
 .loader-text{
     font-family: 'Nunito', sans-serif;

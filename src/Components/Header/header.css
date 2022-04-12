@@ -46,6 +46,8 @@ section{
     align-items: baseline;
     text-align: center;
     margin-left: 5px;
+    gap: 5px;
+    justify-content: space-around;
 }
 .buscador{
     margin: 10px;
@@ -54,8 +56,13 @@ section{
     font-size: large;
 }
 .order{
-    color: aliceblue;
+    width: 20%;
+    height: 20%;
     font-size: large;
+    font-family: 'Nunito', sans-serif;
+    min-width: fit-content;
+    padding: 1px;
+    margin-bottom: 10px;
 }
 .agrega-tarjetas{
     width: 20%;

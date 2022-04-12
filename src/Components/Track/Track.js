@@ -34,7 +34,7 @@ class Track extends Component {
           </div>
           <i className="far fa-window-close"></i>
         </section>
-        <main>
+        <main className="main-row">
           
           <h3 className="title-song">{this.props.dataTrack.title}</h3>
           <img src= {this.props.dataTrack.album.cover_medium}alt='artist-pic'/>

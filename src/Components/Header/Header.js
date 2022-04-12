@@ -6,10 +6,12 @@ class Header extends Component {
         super(props)
         this.state={
           value: "",
+          orden: 'Filas',
+          button: ''
         }
     }
     guardarCambios(datos){
-      let value = 'hola'
+      /*let value = 'hola'*/
       this.setState({
         value: datos.target.value
       },() => this.props.buscarTarjetas(this.state.value))
@@ -17,6 +19,21 @@ class Header extends Component {
     }
     evitarSubmit(event){
       event.preventDefault()
+    }
+    reordenar(){
+      if (this.state.orden === 'Filas'){
+        this.setState({
+          orden: 'Filas',
+          button: 'Ordenar por columnas'
+        })
+      }else{
+        this.setState({
+          orden: 'Columnas',
+          button: 'Ordenar por filas',
+        })
+        
+        }
+      
     }
     render() {
         return (
@@ -27,12 +44,13 @@ class Header extends Component {
             </div>
             
             <section>
-              <p className='order'>Reoordenar</p>
-              <i className="fas fa-th"></i>
-              <i className="fas fa-align-justify"></i>
-              <form  action="" onSubmit={(event)=> this.evitarSubmit(event)}>
+            <form  action="" onSubmit={(event)=> this.evitarSubmit(event)}>
               <input className='buscador' type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='Buscar Cancion' value={this.state.value}/>
               </form>
+              <button className='order' onClick={()=>this.reordenar()}>{this.state.button}</button>
+              <i className="fas fa-th"></i>
+              <i className="fas fa-align-justify"></i>
+              
               <button className='agrega-tarjetas' type="button" onClick={()=>this.props.agregarMas()}>Cargar más tarjetas</button>
             </section>
             

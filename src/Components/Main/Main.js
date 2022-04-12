@@ -10,7 +10,9 @@ class Main extends Component {
       listaTracks: [],
       listaBuscar: [],
       loadTracks: false,
-      cantidadTarjetas: 20
+      cantidadTarjetas: 20,
+      orden: 'Filas',
+      button: ''
     };
   }
   componentDidMount(){
@@ -52,18 +54,34 @@ class Main extends Component {
     })
   }
 
+  reordenar(){
+    if (this.state.orden === 'Filas'){
+      this.setState({
+        orden: 'Filas',
+        button: 'Ordenar por columnas'
+      })
+    }else{
+      this.setState({
+        orden: 'Columnas',
+        button: 'Ordenar por filas',
+      })
+      
+      }
+    
+  }
+
   render() {
     return (
+      console.log(this.state.orden),
       <React.Fragment>
       <Header agregarMas={()=>this.agregarMas()} buscarTarjetas={(dato)=>this.buscarTarjetas(dato)}/>
-      <section className="card-container">
+      <section className="card-container-row">
         {this.state.loadTracks?(
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
           <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion}/>
         ))
         ): <h2 className="loader-text">Cargando...</h2>// los : =else
-      } 
-        
+      }   
       </section>
       </React.Fragment>
     );

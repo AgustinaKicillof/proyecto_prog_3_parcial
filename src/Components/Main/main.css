@@ -33,3 +33,20 @@
     margin-top: 200px;
     margin-bottom: 200px;
 }
+
+/*@media only screen and (max-width: 600px) {
+    .card-container-row{
+    background-image: url(background-pic.png);
+    
+    flex-direction: none;
+    padding: 20px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: fit-content;
+    overflow: hidden;
+    border: solid red 1px;
+    }
+}*/

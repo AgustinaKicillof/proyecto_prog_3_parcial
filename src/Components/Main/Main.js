@@ -11,8 +11,8 @@ class Main extends Component {
       listaBuscar: [],
       loadTracks: false,
       cantidadTarjetas: 20,
-      orden: 'Filas',
-      button: ''
+      orden: 'Columnas',
+      button: 'Ordenar por filas',
     };
   }
   componentDidMount(){
@@ -57,13 +57,13 @@ class Main extends Component {
   reordenar(){
     if (this.state.orden === 'Filas'){
       this.setState({
-        orden: 'Filas',
-        button: 'Ordenar por columnas'
+        orden: 'Columnas',
+        button: 'Ordenar por filas'
       })
     }else{
       this.setState({
-        orden: 'Columnas',
-        button: 'Ordenar por filas',
+        orden: 'Filas',
+        button: 'Ordenar por columnas',
       })
       
       }
@@ -74,11 +74,11 @@ class Main extends Component {
     return (
       console.log(this.state.orden),
       <React.Fragment>
-      <Header agregarMas={()=>this.agregarMas()} buscarTarjetas={(dato)=>this.buscarTarjetas(dato)}/>
-      <section className="card-container-row">
+      <Header agregarMas={()=>this.agregarMas()} buscarTarjetas={(dato)=>this.buscarTarjetas(dato)} reordenar={()=>this.reordenar()}/>
+      <section className={this.state.orden==="Filas"?"card-contanier-row":"card-container-column"}>
         {this.state.loadTracks?(
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
-          <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion}/>
+          <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion} orden={this.state.orden}/>
         ))
         ): <h2 className="loader-text">Cargando...</h2>// los : =else
       }   

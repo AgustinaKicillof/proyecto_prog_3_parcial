@@ -39,7 +39,7 @@ header{
     color: aliceblue;
     text-underline-position: unset;
 }
-section{
+.headerSection{
     display: flex;
     flex-direction: row;
     padding: 20px;

@@ -6,8 +6,7 @@ class Header extends Component {
         super(props)
         this.state={
           value: "",
-          orden: 'Filas',
-          button: ''
+          button: 'Reordenar'
         }
     }
     guardarCambios(datos){
@@ -20,21 +19,6 @@ class Header extends Component {
     evitarSubmit(event){
       event.preventDefault()
     }
-    reordenar(){
-      if (this.state.orden === 'Filas'){
-        this.setState({
-          orden: 'Filas',
-          button: 'Ordenar por columnas'
-        })
-      }else{
-        this.setState({
-          orden: 'Columnas',
-          button: 'Ordenar por filas',
-        })
-        
-        }
-      
-    }
     render() {
         return (
             <header>
@@ -43,11 +27,11 @@ class Header extends Component {
             <a className='refresher' href='local'><h1 className='header-title'>KBL Music</h1><img className='header-logo' src='/LogoKBL.png' alt='Logo'></img> </a>
             </div>
             
-            <section>
+            <section className="headerSection">
             <form  action="" onSubmit={(event)=> this.evitarSubmit(event)}>
               <input className='buscador' type="text" onChange={datos => this.guardarCambios(datos)} name="usuario" placeholder='Buscar Cancion' value={this.state.value}/>
               </form>
-              <button className='order' onClick={()=>this.reordenar()}>{this.state.button}</button>
+              <button className='order' onClick={()=>this.props.reordenar()}>{this.state.button}</button>
               <i className="fas fa-th"></i>
               <i className="fas fa-align-justify"></i>
               

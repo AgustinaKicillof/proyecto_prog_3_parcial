@@ -13,7 +13,7 @@ class Header extends Component {
       /*let value = 'hola'*/
       this.setState({
         value: datos.target.value
-      },() => this.props.buscarTarjetas(this.state.value))
+      },() => this.props.buscarTarjetas(this.state.value)) //aca ejecuto la funcion de buscar tarjetas
      
     }
     evitarSubmit(event){

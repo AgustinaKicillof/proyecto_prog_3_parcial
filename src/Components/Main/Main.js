@@ -50,7 +50,7 @@ class Main extends Component {
   buscarTarjetas(dato){ //dato es lo que pongo en el buscador
     let listaFiltrada = this.state.listaBuscar.filter(cancion=>cancion.title.toLowerCase().includes(dato.toLowerCase())) 
     this.setState({
-      listaTracks: listaFiltrada
+      listaTracks: listaFiltrada //actualizamos 
     })
   }
 
@@ -76,7 +76,9 @@ class Main extends Component {
       <React.Fragment>
       <Header agregarMas={()=>this.agregarMas()} buscarTarjetas={(dato)=>this.buscarTarjetas(dato)} reordenar={()=>this.reordenar()}/>
       <section className={this.state.orden==="Filas"?"card-contanier-row":"card-container-column"}>
-        {this.state.loadTracks?(
+        {this.state.loadTracks?( 
+        this.state.listaTracks.length === 0? //la lista de tracks es 0?
+        <h2 className="loader-text">No se encontraron resultados para tu busqueda</h2>:
         this.state.listaTracks.map((cancion,idx)=>( //si es un si devolve esto//
           <Track eliminarTrack={(idBorrado)=>this.eliminarTrack(idBorrado)} key={cancion.title + idx} dataTrack={cancion} orden={this.state.orden}/>
         ))

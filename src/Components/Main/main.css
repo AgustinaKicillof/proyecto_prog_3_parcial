@@ -34,19 +34,24 @@
     margin-bottom: 200px;
 }
 
-/*@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .card-container-row{
-    background-image: url(background-pic.png);
     
-    flex-direction: none;
-    padding: 20px;
-    gap: 10px;
+    padding: 100px;
+    gap: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    max-width: fit-content;
+    flex-direction: column;
+    
+   
     overflow: hidden;
-    border: solid red 1px;
+    justify-content: center;
+    align-items: center;
+    max-width: none;
+    max-height: fit-content;
+    
     }
-}*/
+    .card-container-column{
+        align-items: center;
+    }
+}

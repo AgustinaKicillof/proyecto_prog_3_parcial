@@ -36,8 +36,9 @@ class Track extends Component {
         </section>
         <main className={this.props.orden==="Filas"?"main-row":"main-column"}>
           
-          <h3 className="title-song">{this.props.dataTrack.title}</h3>
+          
           <img src= {this.props.dataTrack.album.cover_medium}alt='artist-pic'/>
+          <h3 className="title-song">{this.props.dataTrack.title}</h3>
           <h4 className="description">
           Artista: {this.props.dataTrack.artist.name} 
           </h4>

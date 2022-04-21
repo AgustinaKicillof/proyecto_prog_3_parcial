@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import './header.css'
 
 class Header extends Component {
-    constructor(props){
+    constructor(props){ 
         super(props)
-        this.state={
+        this.state={ //definimos el estado inicial del comp//
           value: "",
           button: 'Reordenar'
         }
     }
-    guardarCambios(datos){
-      /*let value = 'hola'*/
-      this.setState({
+    guardarCambios(datos){ 
+      this.setState({ //actualizará el estado interno del componente/Cuando state se modifica el componente se vuelve a renderizar//
         value: datos.target.value
-      },() => this.props.buscarTarjetas(this.state.value)) //aca ejecuto la funcion de buscar tarjetas
+      },() => this.props.buscarTarjetas(this.state.value)) //se ejecutará la funcion una vez que tenga la actualización de los datos//
      
     }
     evitarSubmit(event){
